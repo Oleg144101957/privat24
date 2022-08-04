@@ -28,6 +28,7 @@ class SecondFragment : Fragment() {
         recyclerView = binding.rvSecond
         adapter = SecondAdapter()
         recyclerView.adapter = adapter
+
         viewModel.getBeznalMoney()
         viewModel.myMoneyList.observe(viewLifecycleOwner, { list ->
             list.body()?.let { adapter.setList(it) }

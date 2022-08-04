@@ -20,14 +20,14 @@ class SecondAdapter : RecyclerView.Adapter<SecondAdapter.SecondViewHolder>(){
             binding.apply {
                 itemName.text = beznalichkaItem.ccy
                 itemBuy.text = beznalichkaItem.buy
-                itemBuy.text = beznalichkaItem.sale
+                itemSale.text = beznalichkaItem.sale
             }
         }
     }
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SecondViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.fragment_second, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_money_layout, parent, false)
         return SecondViewHolder(view)
     }
 
@@ -43,6 +43,7 @@ class SecondAdapter : RecyclerView.Adapter<SecondAdapter.SecondViewHolder>(){
 
     fun setList(list: List<BeznalichkaItem>){
         listSecond = list
+        notifyDataSetChanged()
     }
 
 
